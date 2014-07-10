@@ -19,6 +19,7 @@ unwanted_sections = [
     'Official',
     'Other',
     'Notes',
+    'reference',
 ]
 
 
