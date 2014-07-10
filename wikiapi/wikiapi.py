@@ -56,6 +56,9 @@ class WikiApi:
             uri_scheme, self.options['locale'], article_uri, title)
         html = PyQuery(self.get(url))
         data = dict()
+        
+        # url return
+        data['url'] = url
 
         # parse wiki data
         data['heading'] = html('#firstHeading').text()
@@ -142,6 +145,7 @@ class Article:
         self.summary = data.get('summary')
         self.content = data.get('full')
         self.references = data.get('references')
+        self.url = data.get('url')
 
     def __repr__(self):
         return '<wikiapi.Article {0}>'.format(self.heading)
